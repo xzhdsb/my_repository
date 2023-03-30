@@ -6,28 +6,19 @@ import java.util.Objects;
 public class HashSet_1 {
     public static void main(String[] args) {
         HashSet<Person> peoples = new HashSet<>();
-        peoples.add(new Person("xzh",23));
-        peoples.add(new Person("wwc",22));
-        peoples.add(new Person("xzh",23));
+        for (int i = 0; i<= 100; i++){
+            peoples.add(new Person(i));
+        }
+        
         System.out.println(peoples);
     }
 }
 
 class Person{
-    private String name;
     private int age;
 
-    public Person(String name, int age) {
-        this.name = name;
+    public Person(int age) {
         this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getAge() {
@@ -38,12 +29,7 @@ class Person{
         this.age = age;
     }
 
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+    public Person() {
     }
 
     @Override
@@ -51,12 +37,11 @@ class Person{
         if (this == o) return true;
         if (!(o instanceof Person)) return false;
         Person person = (Person) o;
-        return age == person.age &&
-                Objects.equals(name, person.name);
+        return age == person.age;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age);
+        return Objects.hash(age);
     }
 }

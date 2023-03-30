@@ -13,6 +13,7 @@ public class Generic_ {
         Integer i = 1;
         Integer i1 = 2;
         System.out.println(printSum(i , i1));
+
 //        Map
     }
 
