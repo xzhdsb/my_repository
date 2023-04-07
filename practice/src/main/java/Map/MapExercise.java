@@ -21,12 +21,12 @@ public class MapExercise {
 //                System.out.println("员工编号："+i + "，工资为" + employeeMap.get(i).getSal());
 //            }
 //        }
-        for (Object obj:employeeMap.entrySet()
+        for (Map.Entry entry:employeeMap.entrySet()
              ) {
-            Map.Entry entry = (Map.Entry)obj;
+//            Map.Entry entry = (Map.Entry)obj;
             if (((Employee)entry.getValue()).getSal() > 18000.0){
                 System.out.println("编号为：" + entry.getKey() + "的员工，工资为" + ((Employee)entry.getValue()).getSal());
-            }        
+            }
         }
     }
 }
